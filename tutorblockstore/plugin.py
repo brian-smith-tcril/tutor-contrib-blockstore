@@ -56,7 +56,7 @@ MY_INIT_TASKS: list[tuple[str, tuple[str, ...]]] = [
     # For example, to add LMS initialization steps, you could add the script template at:
     # tutorblockstore/templates/blockstore/jobs/init/lms.sh
     # And then add the line:
-    ### ("lms", ("blockstore", "jobs", "init", "lms.sh")),
+    ("cms", ("blockstore", "jobs", "init", "cms.sh")),
 ]
 
 
