@@ -1,0 +1,2 @@
+recursive-include tutorblockstore/patches *
+recursive-include tutorblockstore/templates *
