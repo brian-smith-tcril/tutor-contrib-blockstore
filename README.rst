@@ -1,4 +1,4 @@
-blockstore plugin for `Tutor <https://docs.tutor.overhang.io>`__
+blockstore :code:`FileSystemStorage` plugin for `Tutor <https://docs.tutor.overhang.io>`__
 ===================================================================================
 
 Installation
@@ -6,14 +6,14 @@ Installation
 
 ::
 
-    pip install git+https://github.com/brian-smith-tcril/tutor-contrib-blockstore
+    pip install git+https://github.com/brian-smith-tcril/tutor-contrib-blockstore-filesystem
 
 Usage
 -----
 
 ::
 
-    tutor plugins enable blockstore
+    tutor plugins enable blockstore-filesystem
 
 
 License
