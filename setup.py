@@ -13,7 +13,7 @@ def load_readme():
 def load_about():
     about = {}
     with io.open(
-        os.path.join(HERE, "tutorblockstore", "__about__.py"),
+        os.path.join(HERE, "blockstore_config_filesystem", "__about__.py"),
         "rt",
         encoding="utf-8",
     ) as f:
@@ -27,14 +27,14 @@ ABOUT = load_about()
 setup(
     name="tutor-contrib-blockstore",
     version=ABOUT["__version__"],
-    url="https://github.com/brian-smith-tcril/tutor-contrib-blockstore",
+    url="https://github.com/brian-smith-tcril/tutor-contrib-blockstore-filesystem",
     project_urls={
-        "Code": "https://github.com/brian-smith-tcril/tutor-contrib-blockstore",
-        "Issue tracker": "https://github.com/brian-smith-tcril/tutor-contrib-blockstore/issues",
+        "Code": "https://github.com/brian-smith-tcril/tutor-contrib-blockstore-filesystem",
+        "Issue tracker": "https://github.com/brian-smith-tcril/tutor-contrib-blockstore-filesystem/issues",
     },
     license="AGPLv3",
     author="Brian Smith",
-    description="blockstore plugin for Tutor",
+    description="blockstore FileSystemStorage configuration plugin for Tutor",
     long_description=load_readme(),
     packages=find_packages(exclude=["tests*"]),
     include_package_data=True,
@@ -42,7 +42,7 @@ setup(
     install_requires=["tutor"],
     entry_points={
         "tutor.plugin.v1": [
-            "blockstore = tutorblockstore.plugin"
+            "blockstore_config_filesystem = blockstore_config_filesystem.plugin"
         ]
     },
     classifiers=[

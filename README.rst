@@ -1,4 +1,4 @@
-blockstore :code:`FileSystemStorage` plugin for `Tutor <https://docs.tutor.overhang.io>`__
+blockstore :code:`FileSystemStorage` configuration plugin for `Tutor <https://docs.tutor.overhang.io>`__
 ===================================================================================
 
 Installation
@@ -13,7 +13,7 @@ Usage
 
 ::
 
-    tutor plugins enable blockstore-filesystem
+    tutor plugins enable blockstore_config_filesystem
 
 
 License

@@ -1,2 +1,2 @@
-recursive-include tutorblockstore/patches *
-recursive-include tutorblockstore/templates *
+recursive-include blockstore_config_filesystem/patches *
+recursive-include blockstore_config_filesystem/templates *

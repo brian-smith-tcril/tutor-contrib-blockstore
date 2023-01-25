@@ -49,14 +49,14 @@ hooks.Filters.CONFIG_OVERRIDES.add_items(
 ########################################
 
 # To add a custom initialization task, create a bash script template under:
-# tutorblockstore/templates/blockstore/jobs/init/
+# blockstore_config_filesystem/templates/blockstore/jobs/init/
 # and then add it to the MY_INIT_TASKS list. Each task is in the format:
 # ("<service>", ("<path>", "<to>", "<script>", "<template>"))
 MY_INIT_TASKS: list[tuple[str, tuple[str, ...]]] = [
     # For example, to add LMS initialization steps, you could add the script template at:
-    # tutorblockstore/templates/blockstore/jobs/init/lms.sh
+    # blockstore_config_filesystem/templates/blockstore/jobs/init/lms.sh
     # And then add the line:
-    ("cms", ("blockstore", "jobs", "init", "cms.sh")),
+    ("cms", ("blockstore_config_filesystem", "jobs", "init", "cms.sh")),
 ]
 
 
@@ -65,7 +65,7 @@ MY_INIT_TASKS: list[tuple[str, tuple[str, ...]]] = [
 # run it as part of the `init` job.
 for service, template_path in MY_INIT_TASKS:
     full_path: str = pkg_resources.resource_filename(
-        "tutorblockstore", os.path.join("templates", *template_path)
+        "blockstore_config_filesystem", os.path.join("templates", *template_path)
     )
     with open(full_path, encoding="utf-8") as init_task_file:
         init_task: str = init_task_file.read()
@@ -132,7 +132,7 @@ hooks.Filters.IMAGES_PUSH.add_items(
 hooks.Filters.ENV_TEMPLATE_ROOTS.add_items(
     # Root paths for template files, relative to the project root.
     [
-        pkg_resources.resource_filename("tutorblockstore", "templates"),
+        pkg_resources.resource_filename("blockstore_config_filesystem", "templates"),
     ]
 )
 
@@ -140,11 +140,11 @@ hooks.Filters.ENV_TEMPLATE_TARGETS.add_items(
     # For each pair (source_path, destination_path):
     # templates at ``source_path`` (relative to your ENV_TEMPLATE_ROOTS) will be
     # rendered to ``source_path/destination_path`` (relative to your Tutor environment).
-    # For example, ``tutorblockstore/templates/blockstore/build``
-    # will be rendered to ``$(tutor config printroot)/env/plugins/blockstore/build``.
+    # For example, ``blockstore_config_filesystem/templates/blockstore_config_filesystem/build``
+    # will be rendered to ``$(tutor config printroot)/env/plugins/blockstore_config_filesystem/build``.
     [
-        ("blockstore/build", "plugins"),
-        ("blockstore/apps", "plugins"),
+        ("blockstore_config_filesystem/build", "plugins"),
+        ("blockstore_config_filesystem/apps", "plugins"),
     ],
 )
 
@@ -155,11 +155,11 @@ hooks.Filters.ENV_TEMPLATE_TARGETS.add_items(
 #  this section as-is :)
 ########################################
 
-# For each file in tutorblockstore/patches,
+# For each file in blockstore_config_filesystem/patches,
 # apply a patch based on the file's name and contents.
 for path in glob(
     os.path.join(
-        pkg_resources.resource_filename("tutorblockstore", "patches"),
+        pkg_resources.resource_filename("blockstore_config_filesystem", "patches"),
         "*",
     )
 ):
