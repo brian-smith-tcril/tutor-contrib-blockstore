@@ -25,7 +25,7 @@ ABOUT = load_about()
 
 
 setup(
-    name="tutor-contrib-blockstore",
+    name="tutor-contrib-blockstore-filesystem",
     version=ABOUT["__version__"],
     url="https://github.com/brian-smith-tcril/tutor-contrib-blockstore-filesystem",
     project_urls={
